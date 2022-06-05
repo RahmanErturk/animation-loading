@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(254, 226, 222);
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    
+}
+
+.processing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 50%;
+    position: relative;
+    padding-top: 50px;
+}
+
+.processing-item {
+   width: 100%;
+   height: 50%;  
+   position: absolute; 
+}
+
+img {
+    position: absolute;
+    right: 0;
+    width: 15%;
+}
+
+
+.processing-item:nth-child(1) {
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0, 1.28, 1, 0.75);
+}
+
+.processing-item:nth-child(2) {
+    visibility: hidden;
+    animation-name: slide;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+     animation-delay: 1s;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0, 1.28, 1, 0.75);
+}
+
+@keyframes slide {
+    0% {
+        visibility: visible;
+        transform: translateX(0%);
+        opacity: 0;
+    }
+    50% {
+        transform: scaleZ();
+        transform: translate(-48%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-80%);
+        opacity: 0;
+        /* visibility: hidden; */
+    }
+}
+
+.processing-item:nth-child(3) {
+    top: 0;
+    right: 45%;
+    visibility: hidden;
+    animation-name: unten;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+
+@keyframes unten {
+    0% {
+        
+        transform: translateY(0%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: translateY(67%);
+        opacity: 1;
+    }
+}
+
+.processing-label {
+    position: absolute;
+    margin-top: 15%;
+    margin-right: 30px;
+}
+
+.label1 {
+    animation: text 1s cubic-bezier(.5, 0, 1, 1) 4 ;
+    opacity: 0;
+}
+
+.label2 {
+    animation: text 0.3s cubic-bezier(.5, 0, 1, 1) 1 forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+@keyframes text {
+    to {
+        opacity: 1;
+    }
+}
