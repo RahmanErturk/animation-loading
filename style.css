@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 100%;
     height: 50%;
     position: relative;
     padding-top: 50px;
@@ -44,7 +44,7 @@ body {
 img {
     position: absolute;
     right: 0;
-    width: 15%;
+    width: 10%;
 }
 
 
@@ -52,7 +52,7 @@ img {
     animation-name: slide;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0, 1.28, 1, 0.75);
+    animation-timing-function: cubic-bezier(0,1.35,1,.45);
 }
 
 .processing-item:nth-child(2) {
@@ -62,18 +62,18 @@ img {
     animation-fill-mode: forwards;
     animation-delay: 1s;
     animation-iteration-count: 3;
-    animation-timing-function: cubic-bezier(0, 1.28, 1, 0.75);
+    animation-timing-function: cubic-bezier(0,1.35,1,.45);
 }
 
 @keyframes slide {
     0% {
         visibility: visible;
         transform: translateX(0%);
-        
+        opacity: 0;
     }
 
     50% {
-        transform: translate(-58%) scale(1.2);
+        transform: translate(-58%);
         opacity: 1;
     }
     
@@ -111,7 +111,7 @@ img {
 .processing-label {
     position: absolute;
     margin-top: 15%;
-    margin-right: 30px;
+    margin-left: 5px;
 }
 
 .label1 {
